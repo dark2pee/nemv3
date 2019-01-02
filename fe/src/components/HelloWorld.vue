@@ -121,6 +121,10 @@
         {
           text: 'Articles',
           href: 'https://medium.com/vuetify'
+        },
+        {
+          text: 'jjang-user',
+          href: 'http://localhost:8080/user'
         }
       ],
       whatsNext: [
