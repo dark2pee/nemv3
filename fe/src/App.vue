@@ -81,7 +81,7 @@ export default {
       items: [
         {
           icon: 'home',
-          title: '홈',
+          title: '홈aaa',
           to: {
             path: '/'
           }
