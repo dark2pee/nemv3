@@ -15,7 +15,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use(cors())
+
+if (process.env.NODE_ENV !== 'production') app.use(cors())
 app.use('/api', require('./routes/api'))
 app.use(history())
 app.use(express.static(path.join(__dirname, '../fe','dist')));
@@ -73,3 +74,5 @@ mongoose.connect('mongodb://localhost:27017/nemv', { useNewUrlParser: true },  (
     //   .catch(e => console.log(e))
 
 })
+
+console.log(process.env.NODE_ENV)
