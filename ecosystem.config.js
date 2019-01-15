@@ -14,7 +14,7 @@ module.exports = {
   }],
 
   deploy : {
-    production : {
+    pr : {
       user : 'root',
       host : '133.186.150.189',
       key : 'C:/NVME/projects/nemvKey.pem',

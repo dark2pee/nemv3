@@ -39,12 +39,16 @@ app.use(function(err, req, res, next) {
   res.send({msg: err.message})
 });
 
-module.exports = app;
-
 const mongoose = require('mongoose')
 const User = require('./models/users')
 
-mongoose.connect('mongodb://localhost:27017/nemv', { useNewUrlParser: true },  (err) => {
+console.log(`${process.env.NODE_ENV} started!`)
+
+//const cfg = require('../config/conf.json')
+const cfg = require('../config') // file 이름이 index이면 이름을 안적어도 됨.
+console.log(cfg)
+//mongoose.connect('mongodb://localhost:27017/nemv', { useNewUrlParser: true },  (err) => {
+mongoose.connect(cfg.dbUrl, { useNewUrlParser: true },  (err) => {
   if (err) return console.error(err)
   console.log('mongoose connected!')
 
@@ -75,4 +79,4 @@ mongoose.connect('mongodb://localhost:27017/nemv', { useNewUrlParser: true },  (
 
 })
 
-console.log(process.env.NODE_ENV)
+module.exports = app;
